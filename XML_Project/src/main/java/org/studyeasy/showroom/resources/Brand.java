@@ -48,7 +48,6 @@ public class Brand {
 	
 	@DELETE
 	@Path("/brands/{brandId}")
-	@Consumes(MediaType.APPLICATION_XML)
 	public void deleteBrand(@PathParam("brandId") int brandId) {
 		service.deleteBrand(brandId);	
 		

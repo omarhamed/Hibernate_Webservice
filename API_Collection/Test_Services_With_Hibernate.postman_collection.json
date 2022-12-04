@@ -105,7 +105,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_XML/showroom/brands/4",
+							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_XML/showroom/brands/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -115,7 +115,7 @@
 								"Database_Connectivty_Hibernate_XML",
 								"showroom",
 								"brands",
-								"4"
+								"6"
 							]
 						}
 					},
@@ -126,6 +126,45 @@
 		{
 			"name": "JSON",
 			"item": [
+				{
+					"name": "Demo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "header",
+								"value": "headerValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_JSON/demo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"Database_Connectivty_Hibernate_JSON",
+								"demo"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Get Brands",
 					"request": {
@@ -154,13 +193,41 @@
 					"response": []
 				},
 				{
+					"name": "Get Brands By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_JSON/showroom/brands/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"Database_Connectivty_Hibernate_JSON",
+								"showroom",
+								"brands",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Add Brand",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"brandName\": \"Marcedes\"\r\n}",
+							"raw": "{\r\n    \"brandName\": \"MG\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -240,6 +307,95 @@
 								"showroom",
 								"brands",
 								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Brand ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_JSON/showroom/brands/2/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"Database_Connectivty_Hibernate_JSON",
+								"showroom",
+								"brands",
+								"2",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Brand ID And Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_JSON/showroom/brands/2/products?category=Bike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"Database_Connectivty_Hibernate_JSON",
+								"showroom",
+								"brands",
+								"2",
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Bike"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Brand ID With Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/Database_Connectivty_Hibernate_JSON/showroom/brands/2/products?category=Car&start=2&end=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"Database_Connectivty_Hibernate_JSON",
+								"showroom",
+								"brands",
+								"2",
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Car"
+								},
+								{
+									"key": "start",
+									"value": "2"
+								},
+								{
+									"key": "end",
+									"value": "4"
+								}
 							]
 						}
 					},
